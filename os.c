@@ -21,71 +21,22 @@ int n, quanta, fc=0, sc=0, mc=0;
 instruction()
 {
 	int i;
-	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\tWELCOME");
-	getch();
-	system("cls");
-	
-	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\tWELCOME TO");
-	getch();
-	system("cls");
-	
-	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\tWELCOME TO THE");
-	getch();
-	system("cls");
-	
-	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\tWELCOME TO THE WORLD");
-	getch();
-	system("cls");
-	
-	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\tWELCOME TO THE WORLD OF");
-	getch();
-	system("cls");
-	
-	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\tWELCOME TO THE WORLD OF OPERATING");
-	getch();
-	system("cls");
-	
-	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\tWELCOME TO THE WORLD OF OPERATING SYSTEM");
-	getch();
-	system("cls");
-
-	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\tWELCOME TO THE WORLD OF OPERATING SYSTEM\n\n\n\n",
-		"	\t\t\t\t\tProject developed by Akshat Pareek\n",
-		"	\t\t\t\t\tRegistration number: 11811340\n",
-		"	\t\t\t\t\tRoll number: 31\n",
-		"	\t\t\t\t\tSection: K18GE");
-			
-	getch();
-	system("cls");
-	
-	printf("\n\n\n\n\n\n\n\n  ");
-	for(i=0; i<120; i++)
+	printf("\n\tWELCOME TO THE WORLD OF OPERATING SYSTEM\n\tProject developed by Akshat Pareek\n\tRegistration number: 11811340\n\tRoll number: 31\n\tSection: K18GE\n\n");
+	for(i=0; i<100; i++)
 	{
 		printf("#");
 	}
-	
-	printf("\n\n\n\t\t\t\tWelcome, please follow the instruction for proper functioning of this system...",
-		  "\n\n\n",
-		  "\t\t\t	1. Enter time in 2400 format eg, 10:30 am should be enter as 1030.",
-		  "\n",
-		  "\t\t\t	2. Enter query arrival time in ascending order, i.e in real time arrival manner.",
-		  "\n",
-		  "\t\t\t	3. You can come between 10:00 am to 12:00 pm only.",
-		  "\n",
-		  "\t\t\t	4. All time units are in minutes.",
-		  "\n",
-		  "\t\t\t	5. Please enter the right value of burst time so that CPU cann't be idle.",
-		  "\n",
-		  "\t\t\t	6. Round Robin and Multilevel Queue are used in this program.			\n\n\n");
-	
-	printf("  ");
-	for(i=0;i<120;i++)
+	printf("\n\tWelcome, please follow the instruction for proper functioning of this system...");
+	printf("\n	1. Enter time in 2400 format eg, 10:30 am should be enter as 1030.");
+	printf("\n	2. Enter query arrival time in ascending order, i.e in real time arrival manner.");
+	printf("\n	3. You can come between 10:00 am to 12:00 pm only.");
+	printf("\n	4. All time units are in minutes.");
+	printf("\n	5. Please enter the right value of burst time so that CPU cann't be idle.");
+	printf("\n	6. Round Robin and Multilevel Queue are used in this program.\n");
+	for(i=0;i<100;i++)
 	{
 		printf("#");
 	}
-	
-	getch();
-	system("cls");
 	return 0;
 }
 
@@ -93,7 +44,6 @@ void input()
 {
 	int t,i;
 	char ch;
-	
 	printf("\n\nEnter total no of queries: ");				//no of queries
 	scanf("%d",&n);
 	
@@ -107,11 +57,10 @@ void input()
 		printf("\nEnter Quanta number for each process: ");				//total quantum number
 		scanf("%d",&quanta);
 		printf("\nEnter f for faculty and s for student: \n");
-		
 		for(i=0; i<n; i++)
 		{
 			printf("\nJob Type(f/s): ");
-			scanf("%c",&ch);
+			scanf("%s",&ch);
 			
 			if(ch=='f')
 			{
@@ -119,7 +68,7 @@ void input()
 				scanf("%d",&f[fc].pid);
 				
 				printf("Process Name: ");
-				scanf("%c",&f[fc].pname);
+				scanf("%s",&f[fc].pname);
 				
 				printf("Arrival Time: ");
 				scanf("%d",&t);
@@ -156,7 +105,7 @@ void input()
 				scanf("%d",&s[sc].pid);
 				
 				printf("Process Name: ");
-				scanf("%c",&s[sc].pname);
+				scanf("%s",&s[sc].pname);
 				
 				printf("Arrival Time: ");
 				scanf("%d",&t);
@@ -316,9 +265,9 @@ void printer()					//it summarize all work to the user as output
 	int total=0,i; 
 	double avg,sum=0;
 	
-	printf("\n\n\t\t\t\t\t\t**********SUMMARY FOR THE EXECUTION**********\n");
-	printf("\n\t\tQuery ID\tProcess Name\tArrival Time\tBurst Time\tCompletion Time\tTurn Around Time\tWaiting Time\n");
-	printf("\t\t___________________________________________________________________________________________________________________________\n");
+	printf("\n\n\t\t\t\t**********SUMMARY FOR THE EXECUTION**********\n");
+	printf("\n\tQuery ID\tProcess Name\tArrival Time\tBurst Time\tCompletion Time\tTurn Around Time\tWaiting Time\n");
+	printf("\t___________________________________________________________________________________________________________________________\n");
 	
 	for(i=0; i<mc; i++)
 	{
@@ -326,29 +275,29 @@ void printer()					//it summarize all work to the user as output
 		{				
 			if(m[i].cmpt>59 && m[i].cmpt<120)
 			{
-				printf("\n\t\t  %d\t\t%c\t\t%d\t\t%d\t\t%d\t\t%d\t\t\t%d", m[i].pid, m[i].pname, (m[i].at+1040), m[i].bt, (m[i].cmpt+1040), (m[i].cmpt-m[i].at), ((m[i].cmpt-m[i].at)- m[i].bt));
+				printf("\n\t  %d\t\t%c\t\t%d\t\t%d\t\t%d\t\t%d\t\t\t%d", m[i].pid, m[i].pname, (m[i].at+1040), m[i].bt, (m[i].cmpt+1040), (m[i].cmpt-m[i].at), ((m[i].cmpt-m[i].at)- m[i].bt));
 			}
 			
 			else if(m[i].cmpt>=120)
 			{
-				printf("\n\t\t  %d\t\t%c\t\t%d\t\t%d\t\t%d	\t\t%d\t\t\t%d", m[i].pid, m[i].pname, (m[i].at+1040), m[i].bt, (m[i].cmpt+1080), (m[i].cmpt-m[i].at), ((m[i].cmpt-m[i].at)- m[i].bt));
+				printf("\n\t  %d\t\t%c\t\t%d\t\t%d\t\t%d	\t\t%d\t\t\t%d", m[i].pid, m[i].pname, (m[i].at+1040), m[i].bt, (m[i].cmpt+1080), (m[i].cmpt-m[i].at), ((m[i].cmpt-m[i].at)- m[i].bt));
 			}
 		}
 		else if(m[i].at>=0 && m[i].at<60)
 		{
 			if(m[i].cmpt>=0 && m[i].cmpt<60)
 			{
-				printf("\n\t\t  %d\t\t%c\t\t%d\t\t%d\t\t%d	\t\t%d\t\t\t%d", m[i].pid, m[i].pname, (m[i].at+1000), m[i].bt, (m[i].cmpt+1000), (m[i].cmpt-m[i].at), ((m[i].cmpt-m[i].at)- m[i].bt));
+				printf("\n\t  %d\t\t%c\t\t%d\t\t%d\t\t%d	\t\t%d\t\t\t%d", m[i].pid, m[i].pname, (m[i].at+1000), m[i].bt, (m[i].cmpt+1000), (m[i].cmpt-m[i].at), ((m[i].cmpt-m[i].at)- m[i].bt));
 			}
 			
 			else if(m[i].cmpt>59 && m[i].cmpt<120)
 			{
-				printf("\n\t\t  %d\t\t%c\t\t%d\t\t%d\t\t%d	\t\t%d\t\t\t%d", m[i].pid, m[i].pname, (m[i].at+1040), m[i].bt, (m[i].cmpt+1040), (m[i].cmpt-m[i].at), ((m[i].cmpt-m[i].at)- m[i].bt));
+				printf("\n\t  %d\t\t%c\t\t%d\t\t%d\t\t%d	\t\t%d\t\t\t%d", m[i].pid, m[i].pname, (m[i].at+1040), m[i].bt, (m[i].cmpt+1040), (m[i].cmpt-m[i].at), ((m[i].cmpt-m[i].at)- m[i].bt));
 			}
 			
 			else if(m[i].cmpt>=120)
 			{
-				printf("\n\t\t  %d\t\t%c\t\t%d\t\t%d\t\t%d	\t\t%d\t\t\t%d", m[i].pid, m[i].pname, (m[i].at+1000), m[i].bt, (m[i].cmpt+1080), (m[i].cmpt-m[i].at), ((m[i].cmpt-m[i].at)- m[i].bt));
+				printf("\n\t  %d\t\t%c\t\t%d\t\t%d\t\t%d	\t\t%d\t\t\t%d", m[i].pid, m[i].pname, (m[i].at+1000), m[i].bt, (m[i].cmpt+1080), (m[i].cmpt-m[i].at), ((m[i].cmpt-m[i].at)- m[i].bt));
 			}
 		}
 		if(total<m[i].cmpt)
@@ -358,7 +307,7 @@ void printer()					//it summarize all work to the user as output
 		sum+= ((m[i].cmpt-m[i].at)-m[i].bt);
 	}
 	
-	printf("\n\t\t___________________________________________________________________________________________________________________________\n");
+	printf("\n\t___________________________________________________________________________________________________________________________\n");
 		
 	avg = sum/mc;
 	printf("\n\nTotal time Spent for all queries: %d",total);
@@ -373,8 +322,6 @@ int main()
 	input();
 	ready();
 	round_robin();
-		system("cls");
 	printer();
 }
-
 
