@@ -7,7 +7,7 @@
 struct process
 {
 	int pid;			//process id
-	char pname;			//process name
+	char pname[20];			//process name
 	int at;				//arrival time
 	int bt;				//burst time
 	int cmpt;			//completion time
@@ -18,7 +18,7 @@ struct process
 
 int n, quanta, fc=0, sc=0, mc=0;
 
-instruction()
+int instruction()
 {
 	int i;
 	printf("\n\tWELCOME TO THE WORLD OF OPERATING SYSTEM\n\tProject developed by Akshat Pareek\n\tRegistration number: 11811340\n\tRoll number: 31\n\tSection: K18GE\n\n");
@@ -68,7 +68,7 @@ void input()
 				scanf("%d",&f[fc].pid);
 				
 				printf("Process Name: ");
-				scanf("%s",&f[fc].pname);
+				scanf("%s",f[fc].pname);
 				
 				printf("Arrival Time: ");
 				scanf("%d",&t);
@@ -105,7 +105,7 @@ void input()
 				scanf("%d",&s[sc].pid);
 				
 				printf("Process Name: ");
-				scanf("%s",&s[sc].pname);
+				scanf("%s",s[sc].pname);
 				
 				printf("Arrival Time: ");
 				scanf("%d",&t);
@@ -275,29 +275,29 @@ void printer()					//it summarize all work to the user as output
 		{				
 			if(m[i].cmpt>59 && m[i].cmpt<120)
 			{
-				printf("\n\t  %d\t\t%c\t\t%d\t\t%d\t\t%d\t\t%d\t\t\t%d", m[i].pid, m[i].pname, (m[i].at+1040), m[i].bt, (m[i].cmpt+1040), (m[i].cmpt-m[i].at), ((m[i].cmpt-m[i].at)- m[i].bt));
+				printf("\n\t  %d\t\t%s\t\t%d\t\t%d\t\t%d\t\t%d\t\t%d", m[i].pid, m[i].pname, (m[i].at+1040), m[i].bt, (m[i].cmpt+1040), (m[i].cmpt-m[i].at), ((m[i].cmpt-m[i].at)- m[i].bt));
 			}
 			
 			else if(m[i].cmpt>=120)
 			{
-				printf("\n\t  %d\t\t%c\t\t%d\t\t%d\t\t%d	\t\t%d\t\t\t%d", m[i].pid, m[i].pname, (m[i].at+1040), m[i].bt, (m[i].cmpt+1080), (m[i].cmpt-m[i].at), ((m[i].cmpt-m[i].at)- m[i].bt));
+				printf("\n\t  %d\t\t%s\t\t%d\t\t%d\t\t%d	\t\t%d\t\t%d", m[i].pid, m[i].pname, (m[i].at+1040), m[i].bt, (m[i].cmpt+1080), (m[i].cmpt-m[i].at), ((m[i].cmpt-m[i].at)- m[i].bt));
 			}
 		}
 		else if(m[i].at>=0 && m[i].at<60)
 		{
 			if(m[i].cmpt>=0 && m[i].cmpt<60)
 			{
-				printf("\n\t  %d\t\t%c\t\t%d\t\t%d\t\t%d	\t\t%d\t\t\t%d", m[i].pid, m[i].pname, (m[i].at+1000), m[i].bt, (m[i].cmpt+1000), (m[i].cmpt-m[i].at), ((m[i].cmpt-m[i].at)- m[i].bt));
+				printf("\n\t  %d\t\t%s\t\t%d\t\t%d\t\t%d	\t\t%d\t\t%d", m[i].pid, m[i].pname, (m[i].at+1000), m[i].bt, (m[i].cmpt+1000), (m[i].cmpt-m[i].at), ((m[i].cmpt-m[i].at)- m[i].bt));
 			}
 			
 			else if(m[i].cmpt>59 && m[i].cmpt<120)
 			{
-				printf("\n\t  %d\t\t%c\t\t%d\t\t%d\t\t%d	\t\t%d\t\t\t%d", m[i].pid, m[i].pname, (m[i].at+1040), m[i].bt, (m[i].cmpt+1040), (m[i].cmpt-m[i].at), ((m[i].cmpt-m[i].at)- m[i].bt));
+				printf("\n\t  %d\t\t%s\t\t%d\t\t%d\t\t%d	\t\t%d\t\t%d", m[i].pid, m[i].pname, (m[i].at+1040), m[i].bt, (m[i].cmpt+1040), (m[i].cmpt-m[i].at), ((m[i].cmpt-m[i].at)- m[i].bt));
 			}
 			
 			else if(m[i].cmpt>=120)
 			{
-				printf("\n\t  %d\t\t%c\t\t%d\t\t%d\t\t%d	\t\t%d\t\t\t%d", m[i].pid, m[i].pname, (m[i].at+1000), m[i].bt, (m[i].cmpt+1080), (m[i].cmpt-m[i].at), ((m[i].cmpt-m[i].at)- m[i].bt));
+				printf("\n\t  %d\t\t%s\t\t%d\t\t%d\t\t%d	\t\t%d\t\t%d", m[i].pid, m[i].pname, (m[i].at+1000), m[i].bt, (m[i].cmpt+1080), (m[i].cmpt-m[i].at), ((m[i].cmpt-m[i].at)- m[i].bt));
 			}
 		}
 		if(total<m[i].cmpt)
@@ -312,7 +312,7 @@ void printer()					//it summarize all work to the user as output
 	avg = sum/mc;
 	printf("\n\nTotal time Spent for all queries: %d",total);
 	printf("\nAverage query time: %f",avg);
-	printf("\n\n\t\t\t\t**********Process Execution Complete**********");
+	printf("\n\n\t\t\t\t**********Process Execution Complete**********\n");
 }
 
 
@@ -324,4 +324,3 @@ int main()
 	round_robin();
 	printer();
 }
-
