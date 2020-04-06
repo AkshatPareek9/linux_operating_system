@@ -1,6 +1,6 @@
 <h1><b> Scheduling Algorithm OS </b></h1>
 
-<i> C++ program for implementing scheduling algorithm. </i>
+<p><i> C program for implementing scheduling algorithm. </i></p>
 
 <ul> 
 <li>  <b>This repository contains program used to implement the following problem:</b>  </li>
